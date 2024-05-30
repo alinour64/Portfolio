@@ -111,41 +111,6 @@ header.sticky {
   display: block;
 }
 
-#mobile-menu-open {
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  right: 15px;
-  top: 10px;
-  color: #3498db;
-  font-size: 1.5em;
-  z-index: 20;
-  padding: 0 7px;
-  border-radius: 4px;
-  background: #fff;
-}
-
-#mobile-menu-close {
-  display: none;
-  text-align: right;
-  width: 100%;
-  background: #fff;
-  font-size: 1.5em;
-  padding-right: 15px;
-  padding-top: 10px;
-  cursor: pointer;
-  color: #3498db;
-}
-
-#mobile-menu-close span {
-  font-size: 0.5em;
-  text-transform: uppercase;
-}
-
-#mobile-menu-close i {
-  vertical-align: middle;
-}
-
 footer {
   padding: 50px 0;
 }
@@ -685,5 +650,72 @@ footer {
 @media only screen and (max-width: 320px) {
   .project > .project-image {
     height: 200px;
+  }
+}
+/* Mobile menu button */
+#mobile-menu-open {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #3498db;
+  font-size: 1.5em;
+  z-index: 20;
+  padding: 10px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for menu items */
+#menu li a:hover {
+  background-color: #f1f1f1;
+  color: #3498db;
+  border-radius: 4px;
+}
+
+/* Media query for small screens */
+@media only screen and (max-width: 768px) {
+  #mobile-menu-open {
+    display: block;
+  }
+
+  #menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 100;
+    overflow-y: auto;
+    padding: 20px; /* Adjust padding to avoid any unnecessary gaps */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  }
+
+  #menu.active {
+    display: block;
+  }
+
+  #menu li {
+    display: block;
+    margin: 20px 0;
+  }
+
+  #menu li a {
+    padding: 20px;
+    font-size: 1.5em;
+  }
+
+  /* Adjust header padding when menu is active */
+  body.active,
+  header {
+    padding: 0;
+  }
+
+  body.active {
+    overflow: hidden;
   }
 }
