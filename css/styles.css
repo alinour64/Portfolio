@@ -760,3 +760,6 @@ footer {
     overflow: hidden;
   }
 }
+.top {
+  margin-top: 25px;
+}
