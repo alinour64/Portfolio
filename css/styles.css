@@ -186,8 +186,8 @@ body {
 
 .scroll-down {
   position: absolute;
-  bottom: 2rem;          /* distance from bottom */
-  left: 50%;             /* center horizontally */
+  bottom: 3rem; /* Increased from 2rem to 3rem to move higher */
+  left: 50%; /* Center horizontally */
   transform: translateX(-50%);
   width: 40px;
   height: 40px;
@@ -197,9 +197,10 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--color-bg); /* arrow color (contrasts with circle) */
+  color: var(--color-bg); /* Arrow color (contrasts with circle) */
   transition: background 0.3s;
 }
+
 
 /* Hover effect for fun */
 .scroll-down:hover {
