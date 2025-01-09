@@ -142,3 +142,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the form and the success message div
+  const form = document.getElementById("contact-form");
+  const successMessage = document.getElementById("form-success-message");
+
+  if (form) {
+    // Add a submit event listener to the form
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      const formData = new FormData(form); // Gather form data
+      const action = form.action; // Get the action URL
+
+      try {
+        // Send the form data using the Fetch API
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          // If the response is successful, display a success message
+          successMessage.style.display = "block";
+          successMessage.textContent = "Thank you! Your message has been sent.";
+          form.reset(); // Clear the form
+        } else {
+          // Handle errors
+          successMessage.style.display = "block";
+          successMessage.textContent = "Oops! There was a problem. Please try again.";
+          successMessage.style.color = "red";
+        }
+      } catch (error) {
+        // Handle network errors
+        successMessage.style.display = "block";
+        successMessage.textContent = "There was a problem sending your message.";
+        successMessage.style.color = "red";
+      }
+    });
+  }
+});

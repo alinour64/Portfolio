@@ -482,43 +482,48 @@
     </div>
   </section>
 
-  <!-- ===========================
-       Contact Section
-  ============================ -->
-  <section id="contact" class="section-padding bg-alt" role="region" aria-labelledby="contact-heading">
-    <div class="container">
-      <h2 id="contact-heading" class="section-title">Get in Touch</h2>
-      <form
-        id="contact-form"
-        class="reveal"
-        method="POST"
-        action="https://formspree.io/f/mjvlyjnp"
-        aria-label="Contact Form"
-      >
-        <input type="hidden" name="_subject" value="Contact request from personal website" />
-        <div class="form-group">
-          <label for="email" class="sr-only">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="_replyto"
-            placeholder="Your email"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="message" class="sr-only">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Your message"
-            required
-          ></textarea>
-        </div>
-        <button type="submit" class="btn">Send</button>
-      </form>
+<!-- ===========================
+     Contact Section
+============================ -->
+<section id="contact" class="section-padding bg-alt" role="region" aria-labelledby="contact-heading">
+  <div class="container">
+    <h2 id="contact-heading" class="section-title">Get in Touch</h2>
+    <form
+      id="contact-form"
+      class="reveal"
+      method="POST"
+      action="https://formspree.io/f/mjvlyjnp"
+      aria-label="Contact Form"
+    >
+      <input type="hidden" name="_subject" value="Contact request from personal website" />
+      <div class="form-group">
+        <label for="email" class="sr-only">Email</label>
+        <input
+          id="email"
+          type="email"
+          name="_replyto"
+          placeholder="Your email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="message" class="sr-only">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your message"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <div id="form-success-message" style="display: none; margin-top: 1rem; color: green;">
+      Thank you! Your message has been sent.
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- ===========================
        Footer
