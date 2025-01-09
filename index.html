@@ -19,6 +19,12 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap"
     rel="stylesheet"
   />
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -34,7 +40,6 @@
       </div>
       <nav class="main-nav" role="navigation" aria-label="Main Navigation">
         <ul>
-          <li><a href="#resume">Resume</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -64,54 +69,31 @@
         />
         <h1 class="hero-title">Nour Ali</h1>
         <h2 class="hero-subtitle typed-subtitle"></h2>
-        <!-- No scroll button here -->
-      </div>
-    </div>
-  
-    <a href="#resume" class="scroll-down" aria-label="Scroll down to Resume">
-      <!-- Replace with any icon or SVG you like -->
-      <svg width="16" height="16" fill="currentColor">
-        <path d="M8 12l4-4H4l4 4z" />
-      </svg>
+      </div>   
+        <!-- "View Resume" Button -->
+  <div class="resume-btn-container">
+    <a 
+      href="https://1drv.ms/b/s!AusTcN6gGykMgY1cBJdO-EP5PIpj2g" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="btn-resume"
+    >
+      View Resume
     </a>
+  </div>
+    
+  <a href="#about" class="scroll-down" aria-label="Scroll down to Resume">
+    <!-- Replace with any icon or SVG you like -->
+    <svg width="16" height="16" fill="currentColor">
+      <path d="M8 12l4-4H4l4 4z" />
+    </svg>
+  </a>
+    </div>
+
   </section>
   
 
-  <!-- ===========================
-       Resume Section
-  ============================ -->
-  <section id="resume" class="section-padding container" role="region" aria-labelledby="resume-heading">
-    <h2 id="resume-heading" class="section-title">My Resume</h2>
-    
-    <!-- Centered iframe container -->
-    <div class="resume-frame-wrapper">
-      <!-- EMBEDDED RESUME -->
-      <iframe
-        src="https://1drv.ms/b/s!AusTcN6gGykMgY1cBJdO-EP5PIpj2g?embed=1&em=2"
-        width="800"
-        height="1100"
-        frameborder="0"
-        scrolling="no"
-        style="overflow: hidden; border: none;"
-        title="Embedded Resume"
-      ></iframe>
-    </div>
-    
-    <!-- "View Resume" Button (links to the direct or PDF version) -->
-    <div class="resume-btn-container">
-      <!-- Update this href if you have a direct PDF link, or keep OneDrive link -->
-      <a 
-        href="https://1drv.ms/b/s!AusTcN6gGykMgY1ciGi1NFdDojs7Hg?e=FDFWUz" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="btn-resume"
-      >
-        View Full Resume
-      </a>
-    </div>
-  </section>
-  
-  
+
 
   <!-- ===========================
        About Section
@@ -542,30 +524,43 @@
        Footer
   ============================ -->
   <footer class="main-footer" role="contentinfo">
-    <div class="container footer-container">
-      <p class="copyright">
-        Copyright &copy;
-        <span id="current-year">2024</span> Nour El-Deen Ali
-      </p>
-      <a href="#home" class="back-to-top" aria-label="Back to top">
-        <svg width="24" height="24" fill="currentColor">
-          <path d="M12 8l-4 4h8l-4-4z" />
-        </svg>
-      </a>
-      <ul class="social-links">
-        <li>
-          <a href="https://github.com/alinour64" target="_blank" aria-label="GitHub"
-            ><i class="fa fa-github" aria-hidden="true"></i
-          ></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/alinour64" target="_blank" aria-label="LinkedIn"
-            ><i class="fa fa-linkedin" aria-hidden="true"></i
-          ></a>
-        </li>
-      </ul>
+    <div class="footer-container">
+      <!-- Left -->
+      <div class="footer-left">
+        <p class="copyright">
+          Copyright &copy;
+          <span id="current-year"></span> Nour El-Deen Ali
+        </p>
+      </div>
+  
+      <!-- Center -->
+      <div class="footer-center">
+        <a href="#home" class="back-to-top" aria-label="Back to top">
+          <svg width="24" height="24" fill="currentColor">
+            <path d="M12 8l-4 4h8l-4-4z"></path>
+          </svg>
+        </a>
+      </div>
+  
+      <!-- Right -->
+      <div class="footer-right">
+        <ul class="social-links">
+          <li>
+            <a href="https://github.com/alinour64" target="_blank" aria-label="GitHub">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/alinour64" target="_blank" aria-label="LinkedIn">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
+  
+      
 
   <!-- JavaScript -->
   <script src="js/scripts.js"></script>

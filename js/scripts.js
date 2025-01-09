@@ -5,14 +5,36 @@ if (currentYear) {
 }
 
 // ===== Mobile Nav Toggle =====
+// Select elements
 const navToggle = document.querySelector('.nav-toggle');
 const mainNav = document.querySelector('.main-nav');
 
+// Function to close the menu
+function closeMenu() {
+  mainNav.classList.remove('active');
+}
+
+// Toggle menu on button click
 if (navToggle && mainNav) {
   navToggle.addEventListener('click', () => {
     mainNav.classList.toggle('active');
   });
+
+  // Close menu when clicking on a menu item
+  mainNav.addEventListener('click', (event) => {
+    if (event.target.tagName === 'A') {
+      closeMenu();
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
 }
+
 
 // ===== Smooth Scroll Button in Hero Section =====
 const scrollBtn = document.querySelector('.btn-scroll');
@@ -87,4 +109,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const resumeButton = document.querySelector(".btn-resume");
+  const scrollDownButton = document.querySelector(".scroll-down");
+  const gap = 10; // Small gap in pixels before disappearance
+  const heroSection = document.querySelector("#home"); // The hero section container
+
+  const checkVisibility = () => {
+    const resumeRect = resumeButton.getBoundingClientRect();
+    const scrollRect = scrollDownButton.getBoundingClientRect();
+    const heroRect = heroSection.getBoundingClientRect(); // Get bounding rectangle for the hero section
+
+    // Check if the scroll-down button should disappear
+    if (
+      resumeRect.bottom >= scrollRect.top - gap || // Overlap condition
+      heroRect.top < 0 // Hero section partially out of view
+    ) {
+      scrollDownButton.classList.add("hidden");
+    } else {
+      scrollDownButton.classList.remove("hidden");
+    }
+  };
+
+  // Check on load, resize, and scroll
+  window.addEventListener("resize", checkVisibility);
+  window.addEventListener("scroll", checkVisibility);
+
+  checkVisibility(); // Initial check
+});
+
 

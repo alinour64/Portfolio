@@ -175,7 +175,7 @@ body {
 
 /* HERO SECTION */
 .hero-section {
-  position: relative; /* allow absolutely positioned items inside */
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -185,9 +185,9 @@ body {
 }
 
 .scroll-down {
-  position: absolute;
-  bottom: 3rem; /* Increased from 2rem to 3rem to move higher */
-  left: 50%; /* Center horizontally */
+  position: fixed; /* Stay fixed at the bottom */
+  bottom: 2rem; /* Distance from the bottom */
+  left: 50%;
   transform: translateX(-50%);
   width: 40px;
   height: 40px;
@@ -197,9 +197,16 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--color-bg); /* Arrow color (contrasts with circle) */
-  transition: background 0.3s;
+  color: var(--color-bg);
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-out */
+  z-index: 10; /* Ensure it’s above other elements */
 }
+
+.hidden {
+  opacity: 0; /* Hide when there’s no space */
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
 
 
 /* Hover effect for fun */
@@ -214,10 +221,11 @@ body {
 
 
 .hero-content {
-  margin-top: -40px; /* slight upward shift to remove big gap */
+  margin-top: -40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.5rem; /* Add gap between text elements */
 }
 
 .hero-image {
@@ -241,7 +249,7 @@ body {
   font-weight: 600;
   font-size: 1.3rem;
   color: var(--color-subtext);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0rem;
 }
 
 .typed-subtitle {
@@ -258,6 +266,16 @@ body {
   color: inherit;                  
 }
 
+@media (max-height: 700px) {
+  .scroll-down {
+    bottom: 1rem; /* Move it closer to the bottom on short screens */
+  }
+
+  .hero-content {
+    gap: 1rem; /* Reduce gap between text elements */
+    margin-bottom: 2rem; /* Add some margin to push content above the button */
+  }
+}
 
 
 /* BUTTONS */
@@ -391,39 +409,12 @@ body {
   background: var(--color-primary);
 }
 
-/* RESUME IFRAME WRAPPER */
-iframe {
-  display: block;
-  border: none;
-  overflow: hidden; /* just in case, but 'scrolling="no"' usually handles this */
-  margin: 0 auto;   /* center it if you like */
-}
 
-/* Resume Frame Wrapper */
-.resume-frame-wrapper {
-  display: flex;
-  justify-content: center; /* horizontally center */
-  align-items: center;
-  overflow: visible; /* Allow scrolling to pass to parent */
-  margin: 0 auto;
-  padding: 1rem 0; /* Optional spacing above/below the iframe */
-  background: #121212;
-  border-radius: 4px; /* Optional rounding for a container look */
-}
-
-/* Iframe Styling */
-.resume-frame-wrapper iframe {
-  display: block;
-  margin: 0 auto;
-  border: none;
-  background: var(--color-bg); /* Ensures the doc background merges seamlessly */
-  pointer-events: none; /* Disables interaction with the iframe */
-}
 
 /* "View Resume" button container */
 .resume-btn-container {
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 0.25rem;
 }
 
 /* Button styling to match your theme */
@@ -481,32 +472,34 @@ iframe {
   background: var(--color-surface);
   padding: 1rem;
   border-top: 1px solid #2d2d2d;
-  position: relative;
 }
 
+/* The parent flex container */
 .footer-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center; /* vertically center them */
+  justify-content: space-between; /* push left & right sections apart */
 }
 
-.social-links {
-  list-style: none;
+/* We’ll give each “column” a bit of flexible space. */
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1; /* so each takes up equal horizontal space */
+}
+
+/* The center item should be… centered! */
+.footer-center {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
 }
 
-.social-links li a {
-  color: var(--color-primary);
-  font-size: 1.2rem;
-  transition: color var(--transition-speed);
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.social-links li a:hover {
-  color: var(--color-secondary);
-}
-
+/* Arrow styling */
 .back-to-top {
   display: inline-flex;
   align-items: center;
@@ -523,6 +516,26 @@ iframe {
 .back-to-top:hover {
   background: rgba(187, 134, 252, 0.8);
 }
+
+/* Social links */
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li a {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  transition: color var(--transition-speed);
+}
+
+.social-links li a:hover {
+  color: var(--color-secondary);
+}
+
 
 /* REVEAL ANIMATION */
 .reveal {
