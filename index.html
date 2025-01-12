@@ -10,7 +10,7 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/HeadShot.jpeg" type="image/x-icon" />
   
-  <!-- NEW: GSAP & Typed.js CDNs -->
+  <!-- GSAP & Typed.js CDNs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   
@@ -20,16 +20,14 @@
     rel="stylesheet"
   />
   <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-/>
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 
-
-  <!-- CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-
   <!-- ===========================
        Header / Navigation
   ============================ -->
@@ -69,31 +67,27 @@
         />
         <h1 class="hero-title">Nour Ali</h1>
         <h2 class="hero-subtitle typed-subtitle"></h2>
-      </div>   
-        <!-- "View Resume" Button -->
-  <div class="resume-btn-container">
-    <a 
-      href="https://1drv.ms/b/s!AusTcN6gGykMgY1cBJdO-EP5PIpj2g" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="btn-resume"
-    >
-      View Resume
-    </a>
-  </div>
-    
-  <a href="#about" class="scroll-down" aria-label="Scroll down to Resume">
-    <!-- Replace with any icon or SVG you like -->
-    <svg width="16" height="16" fill="currentColor">
-      <path d="M8 12l4-4H4l4 4z" />
-    </svg>
-  </a>
+      </div>
+
+      <!-- View Resume Button -->
+      <div class="resume-btn-container">
+        <a 
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-resume"
+        >
+          View Resume
+        </a>
+      </div>
+      
+      <a href="#about" class="scroll-down" aria-label="Scroll down to Resume">
+        <svg width="16" height="16" fill="currentColor">
+          <path d="M8 12l4-4H4l4 4z" />
+        </svg>
+      </a>
     </div>
-
   </section>
-  
-
-
 
   <!-- ===========================
        About Section
@@ -148,13 +142,50 @@
   <section id="education" class="section-padding bg-alt" role="region" aria-labelledby="education-heading">
     <div class="container">
       <h2 id="education-heading" class="section-title">Education</h2>
+
+      <!-- University of Washington -->
       <div class="card reveal">
         <div class="date-and-title">
           <h3>University of Washington</h3>
-          <!-- DATE ALIGNED TO THE RIGHT -->
-          <span class="date-range">September 2021 - December 2024</span>
+          <div class="date-gpa-container">
+            <span class="date-range">September 2021 - December 2024</span>
+            <div class="gpa-container">
+              <span class="gpa-label">GPA:</span>
+              <span class="gpa-value">3.6</span>
+            </div>
+          </div>
         </div>
         <h4>BS Computer Science and Software Engineering</h4>
+      </div>
+
+      <!-- Bellevue College -->
+      <div class="card reveal">
+        <div class="date-and-title">
+          <h3>Bellevue College</h3>
+          <div class="date-gpa-container">
+            <span class="date-range">September 2019 - June 2021</span>
+            <div class="gpa-container">
+              <span class="gpa-label">GPA:</span>
+              <span class="gpa-value">3.98</span>
+            </div>
+          </div>
+        </div>
+        <h4>High School Diploma, Running Start</h4>
+      </div>
+
+      <!-- Lake Washington High School -->
+      <div class="card reveal">
+        <div class="date-and-title">
+          <h3>Lake Washington High School</h3>
+          <div class="date-gpa-container">
+            <span class="date-range">September 2017 - June 2021</span>
+            <div class="gpa-container">
+              <span class="gpa-label">GPA:</span>
+              <span class="gpa-value">3.67</span>
+            </div>
+          </div>
+        </div>
+        <h4>High School Diploma</h4>
       </div>
     </div>
   </section>
@@ -235,7 +266,6 @@
         </li>
       </ul>
     </div>
-
   </section>
 
   <!-- ===========================
@@ -386,7 +416,6 @@
           >
         </div>
       </div>
-
     </div>
   </section>
 
@@ -482,48 +511,46 @@
     </div>
   </section>
 
-<!-- ===========================
-     Contact Section
-============================ -->
-<section id="contact" class="section-padding bg-alt" role="region" aria-labelledby="contact-heading">
-  <div class="container">
-    <h2 id="contact-heading" class="section-title">Get in Touch</h2>
-    <form
-      id="contact-form"
-      class="reveal"
-      method="POST"
-      action="https://formspree.io/f/mjvlyjnp"
-      aria-label="Contact Form"
-    >
-      <input type="hidden" name="_subject" value="Contact request from personal website" />
-      <div class="form-group">
-        <label for="email" class="sr-only">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="_replyto"
-          placeholder="Your email"
-          required
-        />
+  <!-- ===========================
+       Contact Section
+  ============================ -->
+  <section id="contact" class="section-padding bg-alt" role="region" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 id="contact-heading" class="section-title">Get in Touch</h2>
+      <form
+        id="contact-form"
+        class="reveal"
+        method="POST"
+        action="https://formspree.io/f/mjvlyjnp"
+        aria-label="Contact Form"
+      >
+        <input type="hidden" name="_subject" value="Contact request from personal website" />
+        <div class="form-group">
+          <label for="email" class="sr-only">Email</label>
+          <input
+            id="email"
+            type="email"
+            name="_replyto"
+            placeholder="Your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="message" class="sr-only">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your message"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+      </form>
+      <div id="form-success-message" style="display: none; margin-top: 1rem; color: green;">
+        Thank you! Your message has been sent.
       </div>
-      <div class="form-group">
-        <label for="message" class="sr-only">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your message"
-          required
-        ></textarea>
-      </div>
-      <button type="submit" class="btn">Send</button>
-    </form>
-    <div id="form-success-message" style="display: none; margin-top: 1rem; color: green;">
-      Thank you! Your message has been sent.
     </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- ===========================
        Footer
@@ -537,7 +564,7 @@
           <span id="current-year"></span> Nour El-Deen Ali
         </p>
       </div>
-  
+
       <!-- Center -->
       <div class="footer-center">
         <a href="#home" class="back-to-top" aria-label="Back to top">
@@ -546,7 +573,7 @@
           </svg>
         </a>
       </div>
-  
+
       <!-- Right -->
       <div class="footer-right">
         <ul class="social-links">
@@ -564,15 +591,12 @@
       </div>
     </div>
   </footer>
-  
-      
 
-  <!-- JavaScript -->
+  <!-- Main JavaScript -->
   <script src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
-
 </body>
 </html>
