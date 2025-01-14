@@ -624,4 +624,30 @@
       margin-left: 0;
     }
   }
+
+  @media (max-width: 600px) {
+    .date-and-title {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align items to the left */
+      gap: 0.5rem; /* Add some spacing between items */
+    }
+
+    .date-gpa-container {
+      align-items: flex-start; /* Align GPA container to the left */
+    }
+
+    .gpa-container {
+      flex-direction: row; /* Ensure GPA label and value are in one line */
+      gap: 0.3rem; /* Adjust gap for smaller screens */
+    }
+
+    .gpa-label {
+      font-size: 0.85rem; /* Slightly smaller font size for GPA label */
+    }
+
+    .gpa-value {
+      font-size: 0.85rem; /* Slightly smaller font size for GPA value */
+    }
+  }
+
   
