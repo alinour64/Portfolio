@@ -357,6 +357,18 @@
     margin-bottom: 1.5rem;
     color: var(--color-primary);
   }
+  .section-content p strong {
+    color: rgba(3, 218, 198, 0.8); /* Light blueish green color */
+  }
+  .section-content p:last-of-type {
+    text-align: center;
+    color: rgba(187, 134, 252, 0.8); /* Purple color */
+    font-weight: bold;
+  }
+  .section-content p:nth-last-of-type(2) {
+    text-align: center;
+    font-style: italic;
+  }
   
   /* =========================================
      7. CONTENT BLOCKS (Cards, Experience, etc.)
