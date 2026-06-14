@@ -9,14 +9,12 @@
   <title>Nour Ali - Software Engineer</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="images/HeadShot.jpeg" type="image/x-icon" />
-  
-  <!-- GSAP & Typed.js CDNs -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  
+
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link
@@ -28,6 +26,8 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" aria-hidden="true"></div>
   <!-- ===========================
        Header / Navigation
   ============================ -->
@@ -58,30 +58,27 @@
        Hero / Home Section
   ============================ -->
   <section id="home" class="hero-section">
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-content container">
-      <div class="hero-text">
+      <div class="hero-image-wrap">
         <img
           src="images/HeadShot.jpeg"
           alt="Profile photo of Nour Ali"
           class="hero-image"
         />
-        <h1 class="hero-title">Nour Ali</h1>
-        <h2 class="hero-subtitle typed-subtitle"></h2>
+      </div>
+      <p class="hero-eyebrow">Software Engineer · ML &amp; AI</p>
+      <h1 class="hero-title">Nour Ali</h1>
+      <h2 class="hero-subtitle"><span class="typed-subtitle"></span></h2>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <button type="button" class="btn-resume" id="open-resume" aria-haspopup="dialog">
+          View Resume
+        </button>
       </div>
 
-      <!-- View Resume Button -->
-      <div class="resume-btn-container">
-        <a 
-          href="https://1drv.ms/b/s!AusTcN6gGykMgY1cBJdO-EP5PIpj2g?embed=1&em=2"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-resume"
-        >
-          View Resume
-        </a>
-      </div>
-      
-      <a href="#about" class="scroll-down" aria-label="Scroll down to Resume">
+      <a href="#about" class="scroll-down" aria-label="Scroll down to About section">
         <svg width="16" height="16" fill="currentColor">
           <path d="M8 12l4-4H4l4 4z" />
         </svg>
@@ -140,7 +137,7 @@
       <h2 id="education-heading" class="section-title">Education</h2>
 
       <!-- Georgia Tech -->
-      <div class="card reveal">
+      <div class="card">
         <div class="date-and-title">
           <h3>Georgia Institute of Technology</h3>
           <div class="date-gpa-container">
@@ -155,7 +152,7 @@
       </div>
 
       <!-- University of Washington -->
-      <div class="card reveal">
+      <div class="card">
         <div class="date-and-title">
           <h3>University of Washington</h3>
           <div class="date-gpa-container">
@@ -185,7 +182,7 @@
       </div>
 
       <!-- Bellevue College -->
-      <div class="card reveal">
+      <div class="card">
         <div class="date-and-title">
           <h3>Bellevue College</h3>
           <div class="date-gpa-container">
@@ -200,7 +197,7 @@
       </div>
 
       <!-- Lake Washington High School -->
-      <div class="card reveal">
+      <div class="card">
         <div class="date-and-title">
           <h3>Lake Washington High School</h3>
           <div class="date-gpa-container">
@@ -222,18 +219,18 @@
   <section id="experience" class="section-padding container" role="region" aria-labelledby="experience-heading">
     <h2 id="experience-heading" class="section-title">Experience</h2>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>Amazon</h3>
         <span class="date-range">Apr 2025 – Present</span>
       </div>
       <h4>Software Development Engineer</h4>
       <ul>
-        <!-- <li>Recently joined Amazon as a Software Development Engineer</li> -->
+        <li>Amazon Ads</li>
       </ul>
     </div>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>American Express</h3>
         <span class="date-range">Jan 2025 – Apr 2025</span>
@@ -244,7 +241,7 @@
       </ul>
     </div>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>American Express</h3>
         <span class="date-range">Jun 2024 – Aug 2024</span>
@@ -269,7 +266,7 @@
       </ul>
     </div>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>University of Washington</h3>
         <span class="date-range">Jan 2024 – Apr 2024</span>
@@ -285,7 +282,7 @@
       </ul>
     </div>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>University of Rhode Island</h3>
         <span class="date-range">Nov 2022 – Feb 2023</span>
@@ -315,7 +312,7 @@
     <div class="container">
       <h2 id="projects-heading" class="section-title">Projects</h2>
       
-      <div class="project-card reveal">
+      <div class="project-card">
         <h3>Real-Time Messaging Platform</h3>
         <ul>
           <li>
@@ -344,13 +341,13 @@
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://fullchatbot.azurewebsites.net/"
+            href="https://www.youtube.com/watch?v=VNCBEUTO41s"
             >Application Demo</a
           >
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card">
         <h3>ML-Based Stock Predictor with Live Visualizations</h3>
         <ul>
           <li>
@@ -373,16 +370,10 @@
             href="https://github.com/alinour64/StockPredictionModel"
             >GitHub Repo</a
           >
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://stockspredictionmodel.streamlit.app/"
-            >Application Demo</a
-          >
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card">
         <h3>Custom File System for ThreadOS</h3>
         <ul>
           <li>
@@ -405,7 +396,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card">
         <h3>Microcontroller Project using ARM Assembly</h3>
         <ul>
           <li>
@@ -428,7 +419,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card">
         <h3>Launcher Hijinx – A Unity Game</h3>
         <ul>
           <li>
@@ -465,7 +456,7 @@
   <section id="volunteer" class="section-padding container" role="region" aria-labelledby="volunteer-heading">
     <h2 id="volunteer-heading" class="section-title">Volunteer</h2>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>Tamkeen Youth</h3>
         <span class="date-range">Jan 2016 – Present</span>
@@ -484,7 +475,7 @@
       </ul>
     </div>
 
-    <div class="experience-block reveal">
+    <div class="experience-block">
       <div class="date-and-title">
         <h3>Kumon</h3>
         <span class="date-range">Oct 2017 – Mar 2020</span>
@@ -507,7 +498,7 @@
   <section id="skills" class="section-padding bg-alt" role="region" aria-labelledby="skills-heading">
     <div class="container">
       <h2 id="skills-heading" class="section-title">Skills</h2>
-      <div class="skills-grid reveal">
+      <div class="skills-grid">
         <span>HTML</span>
         <span>CSS</span>
         <span>JavaScript</span>
@@ -543,7 +534,7 @@
   ============================ -->
   <section id="interests" class="section-padding container" role="region" aria-labelledby="interests-heading">
     <h2 id="interests-heading" class="section-title">Interests</h2>
-    <div class="skills-grid reveal">
+    <div class="skills-grid">
       <span>Software Engineering</span>
       <span>Data Science</span>
       <span>Machine Learning</span>
@@ -640,11 +631,43 @@
     </div>
   </footer>
 
-  <!-- Main JavaScript -->
-  <script src="js/scripts.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- ===========================
+       Resume Modal (embedded, live-updating viewer)
+  ============================ -->
+  <div class="resume-modal" id="resume-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Résumé of Nour Ali">
+    <div class="resume-modal-backdrop" data-close-resume></div>
+    <div class="resume-modal-content">
+      <div class="resume-modal-bar">
+        <span class="resume-modal-title">Résumé — Nour Ali</span>
+        <div class="resume-modal-actions">
+          <a
+            href="https://1drv.ms/b/c/0c291ba0de7013eb/IQDrE3DeoBspIIAM3EYAAAAAAQKHsjxMtIGHw_pGW2zTZnI?e=wBg8cE"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resume-open-link"
+          >Open in new tab ↗</a>
+          <button type="button" class="resume-modal-close" id="close-resume" aria-label="Close résumé" data-close-resume>&times;</button>
+        </div>
+      </div>
+      <div class="resume-modal-frame">
+        <iframe
+          data-src="https://1drv.ms/b/c/0c291ba0de7013eb/UQTrE3DeoBspIIAM3EYAAAAAAASXTvhD-TyKY9o"
+          title="Résumé of Nour Ali"
+          frameborder="0"
+          scrolling="auto"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Libraries (loaded before our script so they're ready on window.load) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+
+  <!-- Main JavaScript -->
+  <script src="js/scripts.js"></script>
 </body>
 </html>
