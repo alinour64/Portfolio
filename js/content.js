@@ -34,6 +34,10 @@ const content = {
       "title": "Volunteer",
       "intro": "Work I do for my community."
     },
+    "skills": {
+      "title": "Toolbox",
+      "intro": "Languages and tools I've used at work and in my projects."
+    },
     "contact": {
       "title": "Let's talk.",
       "intro": "Email is the fastest way to reach me. You can also send a message with the form."

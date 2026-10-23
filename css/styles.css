@@ -593,51 +593,53 @@ svg.fill {
   }
 }
 
-.skills {
+.toolbox {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.tool-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
-  margin-top: 44px;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
-.skill-group {
-  padding: 18px 20px 20px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--surface);
-}
-
-.skill-label {
+.tool-row dt {
+  padding-top: 2px;
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent-text);
 }
 
-.chips,
+.tool-row dd {
+  margin: 0;
+}
+
+.tool-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.tool-list li:not(:last-child)::after {
+  content: "·";
+  margin: 0 10px;
+  color: var(--faint);
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  list-style: none;
-}
-
-.chips {
-  margin-top: 12px;
-}
-
-.chips li {
-  padding: 3px 11px;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  font-size: 0.86rem;
-  font-weight: 500;
-}
-
-.tags {
   margin-top: 14px;
+  list-style: none;
 }
 
 .tags li {
@@ -1486,6 +1488,11 @@ svg.fill {
   .brand-name,
   .hero-loc {
     display: none;
+  }
+
+  .tool-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .stop {

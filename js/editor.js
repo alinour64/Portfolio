@@ -1,4 +1,4 @@
-const sectionKeys = ["about", "experience", "projects", "education", "volunteer", "contact"];
+const sectionKeys = ["about", "experience", "projects", "education", "volunteer", "skills", "contact"];
 const draftKey = "portfolio-draft";
 
 const highlightHint = "Wrap words in **double stars** to highlight them.";
@@ -49,7 +49,7 @@ const schema = [
     key: "skills",
     label: "Skills",
     kind: "list",
-    scroll: "about",
+    scroll: "skills",
     noun: "skill group",
     title: function (item) { return item.label || "New skill group"; },
     subtitle: function (item) { return (item.items || []).join(", "); },

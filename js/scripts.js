@@ -1,4 +1,5 @@
-const sectionOrder = ["about", "experience", "projects", "education", "volunteer", "contact"];
+const sectionOrder = ["about", "experience", "projects", "education", "volunteer", "skills", "contact"];
+const hiddenFromNav = ["skills"];
 const coverColors = ["blue", "coral", "violet", "mint", "pink", "sky"];
 const tileColors = ["#b8c7ff", "#ffb4a2", "#d3c4ff", "#a8e8cf", "#ffc2dc", "#b3e1ff"];
 
@@ -171,7 +172,7 @@ function clear(id) {
 
 function sectionVisible(key, data) {
   if (key === "contact") return true;
-  if (key === "about") return hasItems(clean(data.about)) || hasItems(data.skills);
+  if (key === "about") return hasItems(clean(data.about));
   return hasItems(data[key]);
 }
 
@@ -191,7 +192,7 @@ function renderSections(data) {
     number++;
     const label = key === "contact" ? "Contact" : info.title || key;
 
-    for (let n = 0; n < navs.length; n++) {
+    for (let n = 0; n < navs.length && hiddenFromNav.indexOf(key) === -1; n++) {
       const link = make("a");
       link.href = "#" + key;
       link.textContent = label;
@@ -220,13 +221,18 @@ function renderAbout(data) {
   const paragraphs = clean(data.about);
   for (let i = 0; i < paragraphs.length; i++) text.append(addRichText(make("p"), paragraphs[i]));
 
-  const skills = clear("skills");
+}
+
+function renderSkills(data) {
+  const list = clear("skills-list");
   const groups = Array.isArray(data.skills) ? data.skills : [];
   for (let i = 0; i < groups.length; i++) {
-    const group = make("div", "skill-group");
-    group.append(make("h3", "skill-label", groups[i].label));
-    group.append(makeTags(groups[i].items, "chips"));
-    skills.append(group);
+    const row = make("div", "tool-row");
+    row.append(make("dt", "", groups[i].label));
+    const items = make("dd");
+    items.append(makeTags(groups[i].items, "tool-list"));
+    row.append(items);
+    list.append(row);
   }
 }
 
@@ -366,6 +372,7 @@ function render(data) {
   renderProfile(data.profile || {});
   renderSections(data);
   renderAbout(data);
+  renderSkills(data);
   renderTimeline("experience-list", data.experience);
   renderProjects(data);
   renderEducation(data);
